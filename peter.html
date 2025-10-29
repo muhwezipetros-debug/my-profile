@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhwezi Peter | My Website</title>
+<style>
+/* -------------------- General -------------------- */
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Poppins",sans-serif;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  color:#fff;
+  overflow-x:hidden;
+  transition:background 1s ease;
+}
+section{
+  display:none;
+  padding:60px 20px;
+  min-height:100vh;
+  animation:fadeIn 1s ease;
+}
+.active{display:block;}
+nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  background:rgba(0,0,0,0.2);
+  padding:15px;
+  backdrop-filter:blur(10px);
+  z-index:10;
+}
+nav button{
+  background:rgba(255,255,255,0.2);
+  color:white;
+  border:none;
+  padding:10px 18px;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+}
+nav button:hover,nav button.active{
+  background:white;
+  color:#764ba2;
+  transform:scale(1.1);
+}
+h1,h2{text-align:center;margin-bottom:15px}
+p{text-align:center;line-height:1.7;max-width:700px;margin:0 auto 20px}
+
+/* -------------------- Home -------------------- */
+.home{
+  background:linear-gradient(135deg,#667eea,#764ba2);
+}
+.profile-pic{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  border:5px solid #fff;
+  display:block;
+  margin:80px auto 20px;
+  object-fit:cover;
+  animation:bounceIn 1.5s;
+  box-shadow:0 0 20px rgba(255,255,255,0.5);
+}
+
+/* -------------------- About -------------------- */
+.about{background:linear-gradient(135deg,#06beb6,#48b1bf);}
+.about .card{
+  background:white;
+  color:#333;
+  max-width:800px;
+  margin:80px auto;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.2);
+  animation:slideUp 1.2s ease;
+}
+.about .card h2{color:#06beb6;margin-bottom:10px;}
+.about .card p{text-align:left;font-size:1.05em;}
+
+/* -------------------- Hobbies -------------------- */
+.hobbies{background:linear-gradient(135deg,#ff9a9e,#fad0c4);}
+.hobby-box{
+  background:white;
+  color:#333;
+  max-width:700px;
+  margin:20px auto;
+  border-radius:15px;
+  padding:20px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+  transition:transform 0.3s ease;
+  text-align:center;
+}
+.hobby-box:hover{transform:scale(1.03);}
+.hobby-box h3{color:#ff6b6b;margin-bottom:8px;}
+.hobby-image{
+  width:90%;
+  max-width:350px;
+  height:200px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-top:10px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* -------------------- Animations -------------------- */
+@keyframes fadeIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes slideUp{from{opacity:0;transform:translateY(60px);}to{opacity:1;transform:translateY(0);}}
+@keyframes bounceIn{
+  0%{transform:scale(0.8);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);}
+}
+footer{text-align:center;margin-top:40px;color:#eee;font-size:0.9em;}
+</style>
+</head>
+<body>
+
+<nav>
+  <button class="active" onclick="showSection('home', this)">Home</button>
+  <button onclick="showSection('about', this)">About Me</button>
+  <button onclick="showSection('hobbies', this)">Hobbies</button>
+</nav>
+
+<!-- -------------------- HOME -------------------- -->
+<section id="home" class="home active">
+  <img src="myphoto.jpg" alt="Muhwezi Peter" class="profile-pic">
+  <h1>Hey, I'm Muhwezi Peter </h1>
+  <p class="subtitle">Diploma in Computing | Internet Technology</p>
+  <p>Currently living in Namugongo</p>
+  <br>
+  <p>
+    Welcome to my personal space! I’m passionate about computers, technology, and creative innovation.  
+    I love learning, building, and exploring  turning small ideas into real possibilities.
+  </p>
+</section>
+
+<!-- -------------------- ABOUT -------------------- -->
+<section id="about" class="about">
+  <div class="card">
+    <h2>About Me </h2>
+    <p>
+      I’m Muhwezi Peter, a Diploma student in Computing specializing in Internet Technology.  
+      My curiosity for technology started early I always wanted to know how computers and networks work.  
+      Now, I’m exploring programming, networking, and cybersecurity with the goal of becoming a top tech innovator in Uganda and beyond.
+    </p>
+    <p>
+      I believe technology connects people and ideas. I’m driven to use my skills to solve real-world problems,  
+      help others, and make the digital world better for everyone.
+    </p>
+  </div>
+</section>
+
+<!-- -------------------- HOBBIES -------------------- -->
+<section id="hobbies" class="hobbies">
+  <h1>My Hobbies </h1>
+
+  <div class="hobby-box">
+    <h3> Exploring Computers</h3>
+    <p>I enjoy experimenting with new software, fixing computers, and discovering how technology works behind the scenes.</p>
+    <img src="computer.jpg" alt="Exploring Computers" class="hobby-image">
+  </div>
+
+  <div class="hobby-box">
+    <h3> Fictional Movies</h3>
+    <p>I’m fascinated by sci-fi and fictional movies like the Avengers  they stretch imagination and creativity.</p>
+    <img src="tron ares.jpeg" alt="Fictional Movies" class="hobby-image">
+  </div>
+
+  <div class="hobby-box">
+    <h3> Football</h3>
+    <p>Football keeps me active, builds teamwork, and teaches strategy I love both playing and watching it!</p>
+    <img src="jude bellingham.jpg" alt="Football" class="hobby-image">
+  </div>
+
+  <div class="hobby-box">
+    <h3>Video Games</h3>
+    <p>Games challenge my mind and reflexes — my favorite game is Halo, which inspires strategy and fun.</p>
+    <img src="halo.jpg" alt="Halo Game" class="hobby-image">
+  </div>
+
+  <footer>© 2025 Muhwezi Peter | All Rights Reserved</footer>
+</section>
+
+<script>
+function showSection(id, btn){
+  document.querySelectorAll("section").forEach(sec=>sec.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  document.querySelectorAll("nav button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+
+  // Change background color dynamically
+  if(id==="home") document.body.style.background="linear-gradient(135deg,#667eea,#764ba2)";
+  if(id==="about") document.body.style.background="linear-gradient(135deg,#06beb6,#48b1bf)";
+  if(id==="hobbies") document.body.style.background="linear-gradient(135deg,#ff9a9e,#fad0c4)";
+}
+</script>
+</body>
+</html>
